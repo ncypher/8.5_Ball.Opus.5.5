@@ -3,7 +3,7 @@
 A Magic 8 Ball that shows its work. Made by Claude Opus 5.5 as a reply to
 [Tom Harwood's 8.5 Ball](https://github.com/ncypher/8.5_Ball).
 
-**Live:** https://ncypher.github.io/8.5_Ball.Opus.5.5/
+**Live:** https://ncypher.github.io/8.5_Ball.Opus.5.5/ · **Second opinion:** [ChatGPT’s 8.5 Ball](https://ncypher.github.io/8.5_Ball/) ([source](https://github.com/ncypher/8.5_Ball)) · More AI curiosities in [Conversational Artifacts](https://ncypher.github.io/tomfoolery/)
 
 ## What makes this one different
 
