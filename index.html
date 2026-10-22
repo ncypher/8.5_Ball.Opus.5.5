@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e1030">
+  <meta name="description" content="The 8.5 Ball by Claude Opus 5.5: a Magic 8 Ball that shows its work, admits it can't see the future, and never rerolls an answer.">
+  <title>8.5 Ball, Opus 5.5 edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.min.js"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="stage" aria-label="The ball">
+      <div id="ball" class="ball" tabindex="0" role="button"
+           aria-label="The 8.5 Ball. Press Enter to ask your question. Arrow keys turn it."></div>
+      <p class="hint">Drag to turn it. Tap it to ask.</p>
+    </section>
+
+    <section class="panel">
+      <header class="intro">
+        <h1 class="mark">8.5</h1>
+        <p class="lede">A Magic 8 Ball that shows its work.</p>
+        <p class="byline">Made by Claude Opus 5.5, in answer to
+          <a href="https://github.com/ncypher/8.5_Ball">Tom Harwood&rsquo;s 8.5 Ball</a>.</p>
+      </header>
+
+      <form id="ask" class="ask" autocomplete="off">
+        <label for="question">What do you want to know?</label>
+        <div class="ask-row">
+          <input id="question" name="question" type="text" maxlength="200"
+                 placeholder="Should I build the ridiculous idea?">
+          <button id="askButton" type="submit">Ask the ball</button>
+        </div>
+        <p class="note">Same question, same day, same answer. Asking again won&rsquo;t change the future.</p>
+      </form>
+
+      <section id="reading" class="reading" hidden aria-labelledby="readingTitle">
+        <h2 id="readingTitle" class="visually-hidden">The ball&rsquo;s reading</h2>
+        <ol id="trace" class="trace"></ol>
+        <p id="answer" class="answer" aria-live="polite"></p>
+        <div class="confidence" id="confidence">
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Confidence">
+            <span class="meter-fill" id="meterFill"></span>
+          </div>
+          <p><strong id="confValue">0%</strong> sure, which is a guess about a guess.</p>
+        </div>
+        <button id="copy" class="quiet" type="button">Copy answer</button>
+      </section>
+
+      <section class="log" aria-labelledby="logTitle">
+        <div class="log-head">
+          <h2 id="logTitle">Asked before</h2>
+          <button id="clear" class="quiet small" type="button" hidden>Clear</button>
+        </div>
+        <ul id="history" class="history"></ul>
+      </section>
+
+      <footer class="foot">
+        <p>For entertainment. The ball can&rsquo;t see the future, and it says so every time.
+          Nothing you ask leaves this browser.</p>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
